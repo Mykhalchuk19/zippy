@@ -1,0 +1,48 @@
+.blog 
+  width: 100% 
+  height: auto
+  padding-top: 70px
+  padding-bottom: 85px
+
+.blog__title
+  margin-bottom: 50px
+  @include standart__title(#000, center)
+
+.blog__list
+  width: 100% 
+  display: flex
+  justify-content: space-between
+
+.blog__item 
+  width: 220px
+  text-align: center
+
+.blog__image
+
+  width: 205px 
+  height: 110px
+  margin-bottom: 35px
+
+.blog__name
+  margin-bottom: 25px
+  @include black__name__item
+
+.blog__date
+  font-family: $font-Montserrat
+  font-size: 14.74px
+  font-weight: 400
+  color: rgb(196,196,196)
+  margin-bottom: 25px
+
+.blog__text
+  font-family: $font-OpenSans
+  font-size: 13px
+  margin-bottom: 30px
+
+.blog__link
+  padding: 16px 30px
+  color: rgb(50,50,50)
+  background-color: rgb(236,236,236)
+  @include standart__link
+  &:hover
+    @include link__yellow

@@ -1,0 +1,64 @@
+.team
+  width: 100% 
+  height: auto
+  padding: 75px 0
+
+.team__title
+  @include standart__title(#000, center)
+
+
+.team__list
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+  width: 100%
+  height: auto
+
+.team__item
+  width: 33% 
+  min-width: 230px
+  height: auto  
+  text-align: center
+
+.team__photo
+  width: 170px
+  height: 170px
+  border-radius: 50%
+  overflow: hidden
+  position: relative
+  margin: 0 auto 30px auto
+  .photo
+    width: 170px
+    height: 170px
+    position: absolute
+    left: 0 
+    top: 0
+
+.team__social__list
+  width: 100%
+  height: 100%
+  background-color: rgb(98,73,124)
+  position: absolute
+  display: flex
+  justify-content: space-evenly
+  align-items: center
+  opacity: 0
+  transition: opacity 0.3s linear
+  &:hover
+    opacity: 0.8
+
+.team__social__link
+  cursor: pointer
+
+
+.team__name
+  texr-align: center
+  margin-bottom: 10px
+  @include black__name__item
+
+.team__position
+  font-family: $font-Montserrat
+  font-size: 14.74px
+  font-weight: 400
+  color: rgb(196,196,196)
+  margin-bottom: 65px

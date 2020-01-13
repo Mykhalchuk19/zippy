@@ -1,0 +1,48 @@
+.projects
+  width: 100%
+  //height: 873px
+  padding-top: 55px
+
+.projects__title
+  @include standart__title(#000, center)
+
+.projects__list
+  display: flex
+  justify-content: space-between
+  //flex-wrap: wrap
+
+.projects__item
+  width: 351px
+  height: 726px
+  background-color: rgb(239,239,239)
+  &:hover
+    background-color: rgb(255,226,109)
+
+.projects__image
+  width: 100%
+  height: 485px
+  margin-bottom: 40px
+  background-color: rgb(101,101,101)
+
+.projects__name, .projects__text, .projects__link
+  margin-left: 12%
+
+.projects__name
+  margin-bottom: 15px
+  @include black__name__item
+
+.projects__text
+  font-family: $font-OpenSans
+  font-size: 14px
+  line-height: 1.5
+  color: rgb(121,121,122)
+  margin-bottom: 15px
+
+.projects__link
+  background-color: #ffffff
+  color: #000
+  padding: 17px 25px
+  @include standart__link
+  &:hover
+    background-color: rgb(98,73,124)
+    color: #fff

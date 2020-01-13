@@ -1,0 +1,73 @@
+.intro
+  height: 693px
+  width: 100%
+  overflow: hidden
+.intro__slider
+  position: relative
+  height: 693px
+  left: 0
+  transition: all 1s linear
+.intro__slide
+  float: left
+  width: 1366px
+  height: 693px
+  background-image: url('/assets/img/intro__slides/image__slide.png') 
+  background-repeat: no-repeat
+  background-size: cover
+  padding: 160px 0 38px 0
+
+.intro
+  &__content
+    width: 480px
+    height: 100%
+    color: #fff
+  &__title
+    font-family: $font-Montserrat
+    font-size: 38px
+    font-weight: bold
+    margin-bottom: 30px
+  &__subtitle
+    font-family: $font-Roboto
+    font-size: 20px
+    font-weight: 100
+    margin-bottom: 35px
+  &__links
+    height: 52px
+    width: 255px
+    margin-bottom: 200px
+
+.intro__link__yellow
+  margin-right: 5px
+  padding: 17px 25px
+  @include link__yellow
+  &:hover
+    opacity: 0.7
+  
+.intro__link__violet
+  padding: 17px 25px
+  @include link__violet
+  &:hover
+    opacity: 0.7
+
+
+
+
+//----------INDICATORS-------------------
+.slider__dots
+  display: flex
+  justify-content: start
+  width: auto
+
+
+.slider__dot 
+  .slider__button
+    margin-right: 8px
+    height: 7px
+    width: 7px
+    border: none
+    border-radius: 50%
+    background-color: #fff
+    opacity: 0.2
+    cursor: pointer
+  .active__button
+    opacity: 1

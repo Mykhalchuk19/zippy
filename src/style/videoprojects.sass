@@ -1,0 +1,47 @@
+.videoplayer
+  width: 100% 
+  height: auto
+  padding-top: 85px
+  background-color: rgb(98,73,124)
+  overflow: hidden
+
+.videoplayer__title
+  @include standart__title(#fff, center)
+
+.videoplayer__list
+  height: 555px
+  display: flex
+  transition: transform 0.5s
+  will-change: transform
+  justify-content: space-between
+  
+
+
+.videoplayer__item
+  //width: 708px
+  height: 495px
+  //float: left
+  flex: 0 0 50%
+  //float: left
+
+
+.videoplayer__video
+  width: 95%
+  height: auto
+  margin-bottom: 15px
+
+.videoplayer__content
+  width: 95%
+  display: flex
+  justify-content: space-between
+
+.videoplayer
+  &__name, &__time
+    color: #fff
+    font-size: 10.32px
+    font-family: $font-Montserrat
+    font-weight: bold
+    text-transform: uppercase
+  &__name:hover
+    color: rgb(255,226,109)
+    cursor: pointer

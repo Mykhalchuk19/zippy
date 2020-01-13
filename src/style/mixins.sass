@@ -1,0 +1,49 @@
+
+//links
+  
+@mixin standart__link
+  display: inline-block
+  border-radius: 4px
+  text-align: center
+  text-decoration: none
+  font-family: $font-Montserrat
+  font-weight: bold
+  font-size: 10.32px
+  text-transform: uppercase
+
+@mixin link__yellow
+  background-color: rgb(255,226,109)
+  color: rgb(50,50,50)
+  @include standart__link
+  
+@mixin link__violet
+  background-color: rgb(98,73,124)
+  color: #fff
+  @include standart__link
+
+//title section
+
+@mixin standart__title($color, $text-align)
+  font-family: $font-Montserrat
+  font-weight: bold
+  color: $color
+  text-align: $text-align
+  font-size: 44.21px
+  margin-bottom: 45px
+
+
+//name item
+
+@mixin standart__name__item
+  font-family: $font-Montserrat
+  font-weight: bold
+  font-size: 14.74px
+  text-transform: uppercase
+
+@mixin black__name__item
+  color: #000
+  @include standart__name__item
+
+@mixin violet__name__item
+  color: rgb(98,73,124)
+  @include standart__name__item
