@@ -3,25 +3,35 @@
   height: auto
   padding-top: 85px
   background-color: rgb(98,73,124)
-  overflow: hidden
 
 .videoplayer__title
   @include standart__title(#fff, center)
 
+
+.videoplayer__container
+  position: relative
+  width: 100%px
+  height: 555px
+  overflow: hidden
+
 .videoplayer__list
   height: 555px
-  display: flex
-  transition: transform 0.5s
-  will-change: transform
-  justify-content: space-between
+  position: absolute
+  top: 0
+  left: 0
+
+  //display: flex
+  //transition: transform 0.5s
+  //will-change: transform
+  // justify-content: space-between
   
 
 
 .videoplayer__item
-  //width: 708px
+  width: 708px
   height: 495px
-  //float: left
-  flex: 0 0 50%
+  float: left
+  //flex: 0 0 50%
   //float: left
 
 

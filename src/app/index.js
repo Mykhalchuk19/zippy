@@ -70,14 +70,16 @@ function createSecondSlider() {
   const slider = document.querySelector('.videoplayer__list');
   let slides = slider.querySelectorAll('li.videoplayer__item');
   const buttons = document.querySelectorAll('.videoplayer__name');
-  slider.style.transform = `translateX(-25%)`;
-  let currentPosition = 0;
-  let currentSlide = 0;
-  let widthOneSlide = 50; //%
+  let currentPosition = 1;
+  let currentLeft = slides[0].offsetWidth / 2;
+  console.log(currentLeft);
+  let widthOneSlide = slides[0].offsetWidth;
   let setupTranslate = 25;
-
+  let currentSlide = 0;
+  slider.style.width = `${slides.length * widthOneSlide}px`;
+  slider.style.left = `-${currentLeft}px`;
   function showSlider() {
-    const newSlide = slides[currentSlide].cloneNode(true);
+    /*const newSlide = slides[currentSlide].cloneNode(true);
     currentSlide += 1;
     if (currentSlide >= slides.length) {
       currentSlide = 0;
@@ -89,12 +91,51 @@ function createSecondSlider() {
     let currentIndex = Number(this.dataset.index) + 1;
     if (currentIndex == 5) currentIndex = 0;
     buttons[currentIndex].addEventListener('click', showSlider);
-
-    ++currentPosition;
-    slider.style.transform = `translateX(-${currentPosition * widthOneSlide + setupTranslate}%)`;
-
     slider.removeChild(slider.firstElementChild);
-    slider.style.transform = `translateX(-25%)`;
+    slider.style.transform = `translateX(${setupTranslate + widthOneSlide})`;
+    children[0].offsetParent;
+    //++currentPosition;
+    let animation = slider.animate(
+      [
+        { transform: `translateX(-25%)` },
+        { transform: `translateX(-${widthOneSlide + setupTranslate}%)` },
+      ],
+      1000
+    );
+
+    //slider.style.transform = `translateX(-${currentPosition * widthOneSlide + setupTranslate}%)`;
+
+    slider.style.transform = `translateX(-25%)`;*/
+
+    currentPosition++;
+    slider.style.transition = null;
+
+    if (currentPosition > slides.length - 1) {
+      slider.style.left = -currentLeft + 'px';
+      const newSlide = slides[currentSlide].cloneNode(true);
+      newSlide.querySelector('.videoplayer__name').addEventListener('click', showSlider);
+      currentSlide += 1;
+      if (currentSlide >= slides.length) {
+        currentSlide = 0;
+      }
+      slider.appendChild(newSlide);
+      slider.removeChild(slider.firstElementChild);
+      this.removeEventListener('click', showSlider);
+      currentPosition -= 1;
+      //currentPosition--;
+      // console.log(currentPosition);
+    }
+
+    requestAnimationFrame(function() {
+      requestAnimationFrame(function() {
+        slider.style.transition = 'left 0.6s ease-in-out';
+        slider.style.left = -(widthOneSlide + currentLeft) + 'px';
+      });
+    });
+
+    let currentIndex = Number(this.dataset.index) + 1;
+    if (currentIndex == 5) currentIndex = 0;
+    buttons[currentIndex].addEventListener('click', showSlider);
   }
   buttons[2].addEventListener('click', showSlider);
 }
