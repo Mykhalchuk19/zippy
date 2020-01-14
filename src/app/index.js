@@ -70,7 +70,7 @@ function createSecondSlider() {
   const slider = document.querySelector('.videoplayer__list');
   let slides = slider.querySelectorAll('li.videoplayer__item');
   const buttons = document.querySelectorAll('.videoplayer__name');
-  let currentPosition = 1;
+  let currentPosition = 3;
   let currentLeft = slides[0].offsetWidth / 2;
   console.log(currentLeft);
   let widthOneSlide = slides[0].offsetWidth;
@@ -136,6 +136,7 @@ function createSecondSlider() {
     let currentIndex = Number(this.dataset.index) + 1;
     if (currentIndex == 5) currentIndex = 0;
     buttons[currentIndex].addEventListener('click', showSlider);
+    console.log('done');
   }
   buttons[2].addEventListener('click', showSlider);
 }
