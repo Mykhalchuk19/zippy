@@ -7,6 +7,7 @@ function createFirstSlider() {
   let activeIntroSlide = slider.querySelector('.active__intro__slide');
   let introContent = activeIntroSlide.querySelector('.intro__content');
   let widthSlider = 0;
+  let q = 0;
   const indicators = document.createElement('ul');
   for (let i = 0; i < slides.length; i += 1) {
     const dot = document.createElement('li');
@@ -21,6 +22,16 @@ function createFirstSlider() {
 
   const buttons = indicators.querySelectorAll('button.slider__button');
 
+  function findWidthSlides() {
+    slider.style.transition = null;
+    for (let i = 0; i < slides.length; i += 1) {
+      slides[i].style.width = window.innerWidth + 'px';
+      slider.style.left = -slides[q].offsetWidth * q + 'px';
+    }
+  }
+  findWidthSlides();
+  window.addEventListener('resize', findWidthSlides);
+
   function findWidth() {
     for (let i = 0; i < slides.length; i += 1) {
       widthSlider += slides[i].offsetWidth;
@@ -33,10 +44,12 @@ function createFirstSlider() {
   findWidth();
 
   function showSlider() {
+    slider.style.transition = `all 1s linear`;
     activeIntroSlide = slider.querySelector('.active__intro__slide');
     introContent = activeIntroSlide.querySelector('.intro__content');
     for (let i = 0; i < slides.length; i += 1) {
       if (this.getAttribute('data-index') === slides[i].getAttribute('data-number')) {
+        q = i;
         slider.style.left = -slides[i].offsetWidth * i + 'px';
         slides[i].classList.add('active__intro__slide');
         buttons[i].classList.add('active__button');
