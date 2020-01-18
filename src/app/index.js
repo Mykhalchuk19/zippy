@@ -91,35 +91,8 @@ function createSecondSlider() {
   let currentSlide = 0;
   slider.style.width = `${slides.length * widthOneSlide}px`;
   slider.style.left = `-${currentLeft}px`;
+
   function showSlider() {
-    /*const newSlide = slides[currentSlide].cloneNode(true);
-    currentSlide += 1;
-    if (currentSlide >= slides.length) {
-      currentSlide = 0;
-    }
-    newSlide.querySelector('.videoplayer__name').addEventListener('click', showSlider);
-    slider.appendChild(newSlide);
-    this.removeEventListener('click', showSlider);
-
-    let currentIndex = Number(this.dataset.index) + 1;
-    if (currentIndex == 5) currentIndex = 0;
-    buttons[currentIndex].addEventListener('click', showSlider);
-    slider.removeChild(slider.firstElementChild);
-    slider.style.transform = `translateX(${setupTranslate + widthOneSlide})`;
-    children[0].offsetParent;
-    //++currentPosition;
-    let animation = slider.animate(
-      [
-        { transform: `translateX(-25%)` },
-        { transform: `translateX(-${widthOneSlide + setupTranslate}%)` },
-      ],
-      1000
-    );
-
-    //slider.style.transform = `translateX(-${currentPosition * widthOneSlide + setupTranslate}%)`;
-
-    slider.style.transform = `translateX(-25%)`;*/
-
     currentPosition++;
     slider.style.transition = null;
 
@@ -133,11 +106,11 @@ function createSecondSlider() {
       }
       slider.appendChild(newSlide);
       slider.removeChild(slider.firstElementChild);
-      this.removeEventListener('click', showSlider);
       currentPosition -= 1;
       //currentPosition--;
       // console.log(currentPosition);
     }
+    this.removeEventListener('click', showSlider);
 
     requestAnimationFrame(function() {
       requestAnimationFrame(function() {
